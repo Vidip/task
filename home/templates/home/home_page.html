@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+{% image self.image width-400 as img %}
+
+<div style="background: url('{{ img.url }}') no-repeat;
+    background-size: 100%; height: 300px; text-align: center; color: white;"><h3 style="padding-top: 11%;">CDA Interview</h3></div>
+<br>
+<div class="container">
+	<!-- Text is being Referred from https://cdainterview.com for task given by Bemo Academic Consulting -->
+    {{ page.body|richtext }}
+
+</div>
+{% endblock %}
